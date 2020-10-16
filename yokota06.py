@@ -12,7 +12,6 @@ print(dir)
 
 for file in glob(dir + '/*.csv'):
     df = pd.read_csv(file, sep='\t', skiprows=6, index_col='Strand shift')
-    plt.plot(df["per control"], label="E024", color="blue")
     file_name=os.path.basename(file).split('.', 1)[0]
     #plt.figure(figsize=(4,4))
     plt.plot(df["per control"], label=file_name, color="blue")
